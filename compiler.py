@@ -20,8 +20,7 @@ def main(specificDirs=False):
     else:
         dirs = list(os.walk(os.getcwd()))[0][1]
     for dir in dirs:
-        folderPath = os.path.join(dir)
-        fileList = os.listdir(folderPath)
+        fileList = os.listdir(dir)
         fileList = [os.path.join(dir, file) for file in fileList if file[-3:] == ".py"]
         compile(fileList)
         compress(dir)
